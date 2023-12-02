@@ -10,7 +10,7 @@ A system in a safe state has no deadlocks, whereas a system in an unsafe state h
 
 Defined in this problem will be matrices showing the maximum allocated resources and currently allocated resources for each process in the system, usually referred to as "max" and "allocated". These matrices will be n by m, n being the number of processes in the system, and m being the number of different resources. There will also be a vector of m length, simply representing how much of each resource is available.
 
-For this problem, we were to use an input file with a customized format to store the information that will be placed in the aforementioned vector and matrices. In my format, matrices max and allocated are referred to by characters 'M' and 'A', and vector available by 'V'. This character will be read, and then a switch statement is used to store the data in the right variable. The matrices are stored with type vector<vector<int>>, and the vector is simply vector<int>.
+For this problem, we were to use an input file with a customized format to store the information that will be placed in the aforementioned vector and matrices. In my format, matrices max and allocated are referred to by characters 'M' and 'A', and vector available by 'V'. This character will be read, and then a switch statement is used to store the data in the right variable. The matrices are stored with type vector<vector< int >>, and the vector is simply vector< int >.
 
 ```c++
 char ch = 0;                                          //input character
