@@ -160,7 +160,7 @@ int main(){
           finish[i] = true;                                                //then process i can currently finish. Set it's corresponding element to be true, and push onto safe sequence
           safeSequence.push_back(i);                                       //
 
-          std::cout << "Resources freed: ";                                //
+          std::cout << "Resources released: ";                                //
           for(int j = 0; j < work.size(); ++j){                            //
             work[j] = work[j] + allocated[i][j];                           //Since Process i is finished, its resources are free. Add them to the current working resources.
             std::cout << allocated[i][j] << " ";                           //Print out the freed resources
