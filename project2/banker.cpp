@@ -14,7 +14,6 @@ const int resourceNum = 3;
 const int processNum = 5;
 vector<vector<int>> allocated(processNum, vector<int>(resourceNum, 0));
 vector<vector<int>> max(processNum, vector<int>(resourceNum, 0));
-vector<vector<int>> need(processNum, vector<int>(resourceNum, 0));
 vector<int> available(resourceNum, 0);
 
 void outputMatrix(vector<vector<int>> &x){                                                //
