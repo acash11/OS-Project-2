@@ -1,0 +1,42 @@
+Checking Process 0
+Needs of process 0: 7 4 3 
+Current resources: 3 3 2 
+P0 can't go
+Checking Process 1
+Needs of process 1: 1 2 2 
+Current resources: 3 3 2 
+P1 can finish
+Resources freed: 2 0 0 
+P1 -> 
+Checking Process 2
+Needs of process 2: 6 0 0 
+Current resources: 5 3 2 
+P2 can't go
+Checking Process 3
+Needs of process 3: 0 1 1 
+Current resources: 5 3 2 
+P3 can finish
+Resources freed: 2 1 1 
+P1 -> P3 -> 
+Checking Process 4
+Needs of process 4: 4 3 1 
+Current resources: 7 4 3 
+P4 can finish
+Resources freed: 0 0 2 
+P1 -> P3 -> P4 -> 
+Checking Process 0
+Needs of process 0: 7 4 3 
+Current resources: 7 4 5 
+P0 can finish
+Resources freed: 0 1 0 
+P1 -> P3 -> P4 -> P0 -> 
+Checking Process 2
+Needs of process 2: 6 0 0 
+Current resources: 7 5 5 
+P2 can finish
+Resources freed: 3 0 2 
+P1 -> P3 -> P4 -> P0 -> P2 -> 
+
+System is in a safe state
+The safe sequence: 
+P1 -> P3 -> P4 -> P0 -> P2
