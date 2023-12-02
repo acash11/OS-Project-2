@@ -3,13 +3,13 @@ Banker’s Algorithm for deadlock avoidance
 
 ## Introduction
 
-A system in a safe state has no deadlocks, where a system in an unsafe state has a possibility of deadlock. The Banker's algorithm is used to define whether a system is in an unsafe or safe state, and thus can be used to avoid deadlock. For this, a process must define its maximum use of resources, it must be able to wait, and it must be able to return all its resources in a finite amount of time.
+A system in a safe state has no deadlocks, whereas a system in an unsafe state has a possibility of deadlock. The Banker's algorithm is used to define whether a system is in an unsafe or safe state, and thus can be used to avoid deadlock. For this, a process must define its maximum use of resources, it must be able to wait, and it must be able to return all its resources in a finite amount of time.
 
 ## Solving the Problem
 
-Defined in this problem will be matrices showing the maximum allocated rescoures and currently allocated resources for each process in the system, usually referred to as "max" and "allocated". These matrices will be n by m, n being the number of processes in the system, and m being the number of different resources. There will also be a vector of m length, simply representing how much of each resource is available.
+Defined in this problem will be matrices showing the maximum allocated resources and currently allocated resources for each process in the system, usually referred to as "max" and "allocated". These matrices will be n by m, n being the number of processes in the system, and m being the number of different resources. There will also be a vector of m length, simply representing how much of each resource is available.
 
-For this problem, we were to use an input file with a customized formatt to store the information that will be placed in the aforementioed vector and matrices. In my formatt, matrices max and allocated are referred to by characters 'M' and 'A', and vector available by 'V'. This character will be read, and then a switch statement is used to store the data in the right variable. The matrices are stored with type vector<vector<int>>, and the vector is simply vector<int>.
+For this problem, we were to use an input file with a customized format to store the information that will be placed in the aforementioned vector and matrices. In my format, matrices max and allocated are referred to by characters 'M' and 'A', and vector available by 'V'. This character will be read, and then a switch statement is used to store the data in the right variable. The matrices are stored with type vector<vector<int>>, and the vector is simply vector<int>.
 
 ```c++
 char ch = 0;                                          //input character
@@ -51,7 +51,7 @@ char ch = 0;                                          //input character
 
 By subtracting the max amount of resources a process will need to execute by the amount currently allocated to that process, you get the amount left needed, or rather, how much of each resource a process will need to obtain for it to run. So, by subtracting the matrix max by the matrix allocated, you obtain a matrix "need", which shows the needed resources for all processes.
 
-#### Intialization of the "Need" Matrix
+#### Initialization of the "Need" Matrix
 
 ```c++
 vector<vector<int>> need(processNum, vector<int>(resourceNum, 0));    
@@ -63,14 +63,13 @@ vector<vector<int>> need(processNum, vector<int>(resourceNum, 0));
   }                                                                        //
 ```
 
-Once processes are done running their resources will be released. Thus, it is neceassry to keep track of which resources are available after that fact. Here, vector "work" will be used for that. it is initialized to be the same as the avialble vector, but the amount of resources released after each process runs will added to the contents of the vector work.
+Once processes are done running their resources will be released. Thus, it is necessary to keep track of which resources are available after that happens. Here, vector "work" will be used for that. It is initialized to be the same as the avialable vector, but the number of resources released after each process runs will be added to the contents of the vector work.
 
-Two more vectors will be used. First, boolean vector finish, which is legnth m, or rather, the number of processes. It will simply be used to keep track of which processes have executed and which haven't. Also, there is boolean vector lastFirst. It will be used to end the while loop surronding the for loop that goes through each process. It is set equal to vector first. If no values of vector first change after checking each process, then the loop ends, as either the safe sequence is found, or the system is not in a safe state.
-
+Two more vectors will be used. First, Boolean vector finish, which is length m, or rather, the number of processes. It will simply be used to keep track of which processes have executed and which haven't. Also, there is Boolean vector lastFirst. It will be used to end the while loop surrounding the for loop that goes through each process. It is set equal to the vector first. If no values of vector first change after checking each process, then the loop ends, as either the safe sequence is found, or the system is not in a safe state.
 
 ## The Safety Algorithm
 
-The Safety Algorithm will essientially loop over every process that hasn't been able to execute, and check if the resources it needs are avialable. If they aren't the next process is checked, if they are, then those resources are released, and added to vector work, which means more resources are avialable for the other processes now. The number of that process reflected in the boolean vector finish is also changed to be true. This will continue until there is no change in the vector finish after checking all processes, at which point it will be clear if the system is safe or not by the contents of the vector finish. Below is the code for this algorithm, which also has some print statements to help track the program.
+The Safety Algorithm will essentially loop over every process that hasn't been able to execute, and check if the resources it needs are available. If they aren't, the next process is checked, if they are, then those resources are released, and added to vector work, which means more resources are available for the other processes. The number of that process reflected in the Boolean vector finish is also changed to be true. This will continue until there is no change in the vector finish after checking all processes, at which point it will be clear if the system is safe or not by the contents of the vector finish. Below is the code for this algorithm, which also has some print statements to help track the program.
 
 ```c++
 while(finish!=lastFinish){                                               //This will check over every process until no more processes are becoming free.
@@ -131,7 +130,7 @@ while(finish!=lastFinish){                                               //This 
 
 ### Input and Output
 
-Below is an example of the input and output of this program respectively.
+Below is an example of this program's input and output.
 
 ```
 A 010
