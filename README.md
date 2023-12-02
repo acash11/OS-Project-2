@@ -1,5 +1,6 @@
-# OS-Project-2
-Banker’s Algorithm for deadlock avoidance
+# OS-Project-2: Banker’s Algorithm for Deadlock Avoidance
+
+Andrew Cash - 12/1/2023
 
 ## Introduction
 
